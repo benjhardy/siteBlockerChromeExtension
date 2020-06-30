@@ -1,0 +1,34 @@
+{
+    "name": "Ben's Site Blocker",
+    "version": "1.0",
+    "description": "Trying to block sites that distract me during work hours!",
+    "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": ["content.js"]
+      }
+    ],
+    "browser_action": {
+      "default_icon": "images/me.png",
+      "default_title": "blox thyme waisters"
+    },
+    
+    
+    "options_page": "options.html",
+    
+    "icons": {
+      "16": "images/me.png",
+      "32": "images/me.png",
+      "48": "images/me.png",
+      "128": "images/me.png"
+    },
+    "manifest_version": 2
+
+  }
