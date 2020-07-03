@@ -3,15 +3,86 @@
   <head>
     <style>
       button {
-        height: 300px;
-        width: 300px;
-        outline: cornflowerblue;
+        margin: 10px 0;
+      }
+
+      .button {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        background-color: rgb(0, 118, 184);
+        border: solid;
+        border-radius: 3rem;
+        color: gainsboro;
+        /*padding: 15px 50px;*/
+
+        font-size: 28px;
+        cursor: pointer;
+        font-family: "Consolas", Courier, monospace;
+      }
+
+      .button:hover {
+        background-color: rgb(0, 177, 183);
+      }
+      .container {
+        width: 700px;
+        /*display: inline-block;*/
+      }
+      .containerCenter {
+        text-align: center;
+        vertical-align: middle;
+        max-width: 700pt;
+        min-width: 300pt;
+        display: inline-block;
+        line-height: 30px;
       }
     </style>
+    <script type="text/javascript">
+      function addFields() {
+        // Number of inputs to create
+        var number = document.getElementById("member").value;
+        // Container <div> where dynamic content will be placed
+        var container = document.getElementById("container");
+        // Clear previous contents of the container
+        while (container.hasChildNodes()) {
+          container.removeChild(container.lastChild);
+        }
+        for (i = 0; i < number; i++) {
+          // Append a node with a random text
+          container.appendChild(document.createTextNode("Member " + (i + 1)));
+          // Create an <input> element, set its type and name attributes
+          var input = document.createElement("input");
+          input.type = "text";
+          input.name = "member" + i;
+          container.appendChild(input);
+          // Append a line break
+          container.appendChild(document.createElement("br"));
+        }
+      }
+    </script>
   </head>
 
   <body>
     <button id="changeColor"></button>
+
     <script src="popup.js"></script>
+
+    <div class="containerCenter">
+      <button class="button" onclick="window.location.href = 'options.html';">
+        Something
+      </button>
+      <button class="button" onclick="window.location.href = 'options.html';">
+        Something
+      </button>
+      <button class="button" onclick="window.location.href = 'options.html';">
+        Something
+      </button>
+      <button class="button" onclick="window.location.href = 'options.html';">
+        Something
+      </button>
+      <button class="button" onclick="window.location.href = 'options.html';">
+        Something
+      </button>
+    </div>
   </body>
 </html>

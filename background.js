@@ -1,11 +1,13 @@
 // coding train
 console.log("background is running");
 // console.log(tab.id)
+var details = { text: "Glory" };
+chrome.browserAction.setBadgeText(details);
 
 chrome.runtime.onInstalled.addListener(function () {
   chrome.contextMenus.create({
     id: "sampleContextMenu",
-    title: "Sample Context Menu",
+    title: "Hey TOM how are you?!",
     contexts: ["selection"],
   });
 });
